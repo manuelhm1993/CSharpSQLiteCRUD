@@ -98,6 +98,7 @@
             this.txtArt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtArt.Location = new System.Drawing.Point(710, 89);
             this.txtArt.Name = "txtArt";
+            this.txtArt.ReadOnly = true;
             this.txtArt.Size = new System.Drawing.Size(277, 27);
             this.txtArt.TabIndex = 11;
             // 
@@ -116,6 +117,7 @@
             this.txtMarca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMarca.Location = new System.Drawing.Point(710, 156);
             this.txtMarca.Name = "txtMarca";
+            this.txtMarca.ReadOnly = true;
             this.txtMarca.Size = new System.Drawing.Size(277, 27);
             this.txtMarca.TabIndex = 13;
             // 
@@ -134,6 +136,7 @@
             this.txtMedida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMedida.Location = new System.Drawing.Point(710, 227);
             this.txtMedida.Name = "txtMedida";
+            this.txtMedida.ReadOnly = true;
             this.txtMedida.Size = new System.Drawing.Size(213, 27);
             this.txtMedida.TabIndex = 15;
             // 
@@ -152,6 +155,7 @@
             this.txtCategoria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategoria.Location = new System.Drawing.Point(710, 294);
             this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.ReadOnly = true;
             this.txtCategoria.Size = new System.Drawing.Size(213, 27);
             this.txtCategoria.TabIndex = 17;
             // 
@@ -174,6 +178,7 @@
             this.btnLupaMedida.TabIndex = 20;
             this.btnLupaMedida.Text = ":::";
             this.btnLupaMedida.UseVisualStyleBackColor = true;
+            this.btnLupaMedida.Visible = false;
             // 
             // btnLupaCategoria
             // 
@@ -184,6 +189,7 @@
             this.btnLupaCategoria.TabIndex = 21;
             this.btnLupaCategoria.Text = ":::";
             this.btnLupaCategoria.UseVisualStyleBackColor = true;
+            this.btnLupaCategoria.Visible = false;
             // 
             // btnGuardar
             // 
@@ -196,6 +202,7 @@
             this.btnGuardar.TabIndex = 22;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Visible = false;
             // 
             // btnCancelar
             // 
@@ -208,6 +215,8 @@
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalir
             // 
@@ -256,6 +265,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnActualizar
             // 
@@ -297,6 +307,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvListadoArt);
             this.Name = "FormArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CRUD Artículos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArt)).EndInit();
             this.ResumeLayout(false);

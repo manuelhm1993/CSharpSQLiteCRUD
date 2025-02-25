@@ -106,34 +106,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\new-file_40454.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logout256_24927.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\task_document_paper_descending_priority_tasks_documents_icon_142254.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\new-file_40454.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\application_edit_12962.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\new-file_404541.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\document-add_114467.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logout256_249271.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\delete-file256_25240.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\task_document_paper_descending_priority_tasks_documents_icon_142254.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
