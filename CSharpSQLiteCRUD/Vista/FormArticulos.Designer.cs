@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormArticulos));
             this.dgvListadoArt = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -212,7 +213,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Image = global::CSharpSQLiteCRUD.Properties.Resources.logout256_24927;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.Location = new System.Drawing.Point(412, 383);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(93, 79);
@@ -224,7 +225,7 @@
             // btnReporte
             // 
             this.btnReporte.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte.Image = global::CSharpSQLiteCRUD.Properties.Resources.task_document_paper_descending_priority_tasks_documents_icon_142254;
+            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
             this.btnReporte.Location = new System.Drawing.Point(313, 383);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(93, 79);
@@ -236,7 +237,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Image = global::CSharpSQLiteCRUD.Properties.Resources.delete_file256_25240;
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.Location = new System.Drawing.Point(214, 383);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(93, 79);
@@ -248,7 +249,7 @@
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Image = global::CSharpSQLiteCRUD.Properties.Resources.document_add_114467;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.Location = new System.Drawing.Point(16, 383);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(93, 79);
@@ -260,7 +261,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Image = global::CSharpSQLiteCRUD.Properties.Resources.application_edit_12962;
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.Location = new System.Drawing.Point(115, 383);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(93, 79);
@@ -297,7 +298,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvListadoArt);
             this.Name = "FormArticulos";
-            this.Text = "FormArticulos";
+            this.Text = "CRUD Artículos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
