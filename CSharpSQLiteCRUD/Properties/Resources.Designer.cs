@@ -103,59 +103,9 @@ namespace CSharpSQLiteCRUD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logout256_249271 {
-            get {
-                object obj = ResourceManager.GetObject("logout256_249271", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap new_file_40454 {
-            get {
-                object obj = ResourceManager.GetObject("new-file_40454", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap new_file_404541 {
-            get {
-                object obj = ResourceManager.GetObject("new-file_404541", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap new_file_404542 {
-            get {
-                object obj = ResourceManager.GetObject("new-file_404542", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap task_document_paper_descending_priority_tasks_documents_icon_142254 {
             get {
                 object obj = ResourceManager.GetObject("task_document_paper_descending_priority_tasks_documents_icon_142254", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap task_document_paper_descending_priority_tasks_documents_icon_1422541 {
-            get {
-                object obj = ResourceManager.GetObject("task_document_paper_descending_priority_tasks_documents_icon_1422541", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

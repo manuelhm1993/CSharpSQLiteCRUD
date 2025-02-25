@@ -124,28 +124,13 @@
   <data name="logout256_24927" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout256_24927.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logout256_249271" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logout256_249271.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="task_document_paper_descending_priority_tasks_documents_icon_142254" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\task_document_paper_descending_priority_tasks_documents_icon_142254.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="new-file_404542" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new-file_404541.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="new-file_40454" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new-file_40454.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="new-file_404541" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new-file_40454.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete-file256_25240" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete-file256_25240.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="application_edit_12962" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\application_edit_12962.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task_document_paper_descending_priority_tasks_documents_icon_1422541" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\task_document_paper_descending_priority_tasks_documents_icon_142254.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

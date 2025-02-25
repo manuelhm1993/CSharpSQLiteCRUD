@@ -212,7 +212,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Image = global::CSharpSQLiteCRUD.Properties.Resources.logout256_249271;
+            this.btnSalir.Image = global::CSharpSQLiteCRUD.Properties.Resources.logout256_24927;
             this.btnSalir.Location = new System.Drawing.Point(412, 383);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(93, 79);
@@ -224,7 +224,7 @@
             // btnReporte
             // 
             this.btnReporte.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte.Image = global::CSharpSQLiteCRUD.Properties.Resources.task_document_paper_descending_priority_tasks_documents_icon_1422541;
+            this.btnReporte.Image = global::CSharpSQLiteCRUD.Properties.Resources.task_document_paper_descending_priority_tasks_documents_icon_142254;
             this.btnReporte.Location = new System.Drawing.Point(313, 383);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(93, 79);
