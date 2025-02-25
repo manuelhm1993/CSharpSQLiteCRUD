@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpSQLiteCRUD.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -88,6 +89,11 @@ namespace CSharpSQLiteCRUD.Vista
             LimpiarTexto();
 
             this.txtBuscar.Focus();
+        }
+
+        private void FormArticulos_Load(object sender, EventArgs e)
+        {
+            this.dgvListadoArt.DataSource = ControladorArticulo.Listar();
         }
         #endregion
     }

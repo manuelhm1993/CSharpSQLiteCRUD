@@ -309,6 +309,7 @@
             this.Name = "FormArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CRUD Artículos";
+            this.Load += new System.EventHandler(this.FormArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoArt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
