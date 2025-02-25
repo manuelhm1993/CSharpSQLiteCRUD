@@ -83,6 +83,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\FormArticulos.resx">
+      <DependentUpon>FormArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="bd_prueba.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
