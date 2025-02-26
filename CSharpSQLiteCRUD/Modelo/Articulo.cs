@@ -61,6 +61,8 @@ namespace CSharpSQLiteCRUD.Modelo
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("@condicion", condicion);
 
+            cmd.Connection = this.conn;
+
             return cmd;
         }
 
@@ -75,7 +77,7 @@ namespace CSharpSQLiteCRUD.Modelo
 
         public DataTable Todos(string condicion)
         {
-            condicion = condicion.Trim();
+            condicion = $"%{condicion.Trim()}%";
 
             StringBuilder query = new StringBuilder();
 
@@ -83,7 +85,7 @@ namespace CSharpSQLiteCRUD.Modelo
             query.Append("from articulos a ");
             query.Append("inner join categorias c on c.id = a.categoria_id ");
             query.Append("inner join medidas m on m.id = a.medida_id ");
-            query.Append("where a.descripcion like %@condicion% ");
+            query.Append("where a.descripcion like @condicion ");
 
             DataTable dt = ProcesoConsulta(query.ToString(), condicion);
 
