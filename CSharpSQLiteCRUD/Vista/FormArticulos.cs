@@ -93,7 +93,7 @@ namespace CSharpSQLiteCRUD.Vista
 
         private void FormArticulos_Load(object sender, EventArgs e)
         {
-            this.dgvListadoArt.DataSource = ControladorArticulo.Listar("Prueba");
+            this.dgvListadoArt.DataSource = ControladorArticulo.Listar("%");
         }
         #endregion
     }
