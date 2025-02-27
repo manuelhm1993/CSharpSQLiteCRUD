@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Data;
 
-namespace CSharpSQLiteCRUD.Modelo
+namespace CSharpSQLiteCRUD.BaseDatos
 {
     public class Conexion
     {

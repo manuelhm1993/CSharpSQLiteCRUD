@@ -1,11 +1,11 @@
-﻿using CSharpSQLiteCRUD.Modelo;
-using CSharpSQLiteCRUD.Vista;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using CSharpSQLiteCRUD.Modelo;
 
 namespace CSharpSQLiteCRUD.Controlador
 {

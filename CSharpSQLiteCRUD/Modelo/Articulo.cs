@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 //------------------------------------ Recursos SQL
 using System.Data.SqlClient;
 using System.Data;
-using System.Data.SQLite;
+using CSharpSQLiteCRUD.BaseDatos;
 
 namespace CSharpSQLiteCRUD.Modelo
 {
