@@ -6,23 +6,24 @@ using System.Text;
 using System.Threading.Tasks;
 
 using CSharpSQLiteCRUD.Modelo;
+using CSharpSQLiteCRUD.Vista;
 
 namespace CSharpSQLiteCRUD.Controlador
 {
     public static class ControladorArticulo
     {
-        public static DataTable Listar()
+        public static void Listar(FormArticulos vista)
         {
             Articulo articulo = new Articulo();
 
-            return articulo.Todos();
+            vista.CargarDataGridView(articulo.Todos());
         }
 
-        public static DataTable Listar(string condicion)
+        public static void Listar(FormArticulos vista, string condicion)
         {
             Articulo articulo = new Articulo();
 
-            return articulo.Todos(condicion);
+            vista.CargarDataGridView(articulo.Todos(condicion));
         }
     }
 }

@@ -30,6 +30,10 @@ namespace CSharpSQLiteCRUD.Vista
             InitializeComponent();
         }
 
+        public DataGridView DevolverDataGridView() => this.dgvListadoArt;
+
+        public void CargarDataGridView(DataTable dt) => this.dgvListadoArt.DataSource = dt;
+
         #region "Métodos"
         private void ActivarEscrituraTexto(bool estado)
         {
@@ -122,7 +126,7 @@ namespace CSharpSQLiteCRUD.Vista
 
         private void FormArticulos_Load(object sender, EventArgs e)
         {
-            this.dgvListadoArt.DataSource = ControladorArticulo.Listar("%");
+            ControladorArticulo.Listar(this, "%");
 
             FormatoArticulos();
         }
