@@ -7,48 +7,77 @@ using System.Threading.Tasks;
 //------------------------------------ Recursos SQL
 using System.Data.SqlClient;
 using System.Data.SQLite;
+using System.Data;
 
 namespace CSharpSQLiteCRUD.Modelo
 {
     public class Conexion
     {
-        //------------------------------------ Campos de clase
-        private string bd;
+        #region "Propiedades"
+        private static string bd = "./bd_prueba.db";
+        private static SQLiteConnection conn;
+        #endregion
 
-        private static Conexion _conn = null;
-        public static Conexion conn
+        #region "Metodos"
+        public static void CrearConexion()
         {
-            get
-            {
-                if (_conn is null)
-                {
-                    _conn = new Conexion();
-                }
-                return _conn;
-            }
-        }
-
-        //------------------------------------ Método constructor
-        private Conexion()
-        {
-            this.bd = "./bd_prueba.db";
-        }
-
-        public SQLiteConnection CrearConexion()
-        {
-            SQLiteConnection conn = new SQLiteConnection();
+            Conexion.conn = new SQLiteConnection();
 
             try
             {
-                conn.ConnectionString = $"Data Source={this.bd}";
+                Conexion.conn.ConnectionString = $"Data Source={bd}";
             }
             catch (Exception e)
             {
-                conn = null;
+                Conexion.conn = null;
                 throw e;
             }
-
-            return conn;
         }
+
+        public static DataTable ProcesoConsulta(string query, string condicion = "")
+        {
+            CrearConexion();
+
+            SQLiteDataReader result;
+            DataTable tabla = new DataTable();
+            SQLiteCommand cmd;
+
+            try
+            {
+                if (String.IsNullOrEmpty(condicion)) cmd = new SQLiteCommand(query, Conexion.conn);
+
+                else cmd = DevolverConsultaPreparada(query, condicion);
+
+                Conexion.conn.Open();
+                result = cmd.ExecuteReader();
+                tabla.Load(result);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                if (Conexion.conn.State == ConnectionState.Open) Conexion.conn.Close();
+
+                result = null;
+            }
+
+            return tabla;
+        }
+
+        private static SQLiteCommand DevolverConsultaPreparada(string query, string condicion)
+        {
+            SQLiteCommand cmd = new SQLiteCommand();
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("@condicion", condicion);
+
+            cmd.Connection = Conexion.conn;
+
+            return cmd;
+        }
+        #endregion
     }
 }

@@ -64,6 +64,34 @@ namespace CSharpSQLiteCRUD.Vista
             btnReporte.Enabled = mostrar;
             btnSalir.Enabled = mostrar;
         }
+
+        private void FormatoArticulos()
+        {
+            this.dgvListadoArt.Columns["id"].Width = 90;
+            this.dgvListadoArt.Columns["id"].HeaderText = "#";
+
+            this.dgvListadoArt.Columns["descripcion"].Width = 220;
+            this.dgvListadoArt.Columns["descripcion"].HeaderText = "DESCRIPCION";
+
+            this.dgvListadoArt.Columns["marca"].Width = 120;
+            this.dgvListadoArt.Columns["marca"].HeaderText = "MARCA";
+
+            bool medida = !(this.dgvListadoArt.Columns["medida_desc"] is null);
+            bool categoria = !(this.dgvListadoArt.Columns["categoria_desc"] is null);
+
+            string comando = (medida) ? "medida_desc" : "medida_id";
+
+            this.dgvListadoArt.Columns[comando].Width = 100;
+            this.dgvListadoArt.Columns[comando].HeaderText = comando.ToUpper();
+
+            comando = (medida) ? "categoria_desc" : "categoria_id";
+
+            this.dgvListadoArt.Columns[comando].Width = 150;
+            this.dgvListadoArt.Columns[comando].HeaderText = comando.ToUpper();
+
+            this.dgvListadoArt.Columns["medida_id"].Visible = false;
+            this.dgvListadoArt.Columns["categoria_id"].Visible = false;
+        }
         #endregion
 
         #region "Eventos"
@@ -94,6 +122,8 @@ namespace CSharpSQLiteCRUD.Vista
         private void FormArticulos_Load(object sender, EventArgs e)
         {
             this.dgvListadoArt.DataSource = ControladorArticulo.Listar("%");
+
+            FormatoArticulos();
         }
         #endregion
     }
