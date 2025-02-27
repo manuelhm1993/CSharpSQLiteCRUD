@@ -14,7 +14,11 @@ namespace CSharpSQLiteCRUD.Modelo
     public class Articulo
     {
         #region "Propiedades"
-
+        public int Id { get; set; }
+        public string Descripcion { get; set; }
+        public string Marca { get; set; }
+        public int MedidaId { get; set; }
+        public int CategoriaId { get; set; }
         #endregion
 
         #region "Metodos"

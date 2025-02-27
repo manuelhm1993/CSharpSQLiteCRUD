@@ -21,15 +21,15 @@ namespace CSharpSQLiteCRUD.BaseDatos
         #region "Metodos"
         public static void CrearConexion()
         {
-            Conexion.conn = new SQLiteConnection();
+            conn = new SQLiteConnection();
 
             try
             {
-                Conexion.conn.ConnectionString = $"Data Source={bd}";
+                conn.ConnectionString = $"Data Source={bd}";
             }
             catch (Exception e)
             {
-                Conexion.conn = null;
+                conn = null;
                 throw e;
             }
         }
@@ -44,11 +44,11 @@ namespace CSharpSQLiteCRUD.BaseDatos
 
             try
             {
-                if (String.IsNullOrEmpty(condicion)) cmd = new SQLiteCommand(query, Conexion.conn);
+                if (String.IsNullOrEmpty(condicion)) cmd = new SQLiteCommand(query, conn);
 
                 else cmd = DevolverConsultaPreparada(query, condicion);
 
-                Conexion.conn.Open();
+                conn.Open();
                 result = cmd.ExecuteReader();
                 tabla.Load(result);
             }
@@ -58,7 +58,7 @@ namespace CSharpSQLiteCRUD.BaseDatos
             }
             finally
             {
-                if (Conexion.conn.State == ConnectionState.Open) Conexion.conn.Close();
+                if (conn.State == ConnectionState.Open) conn.Close();
 
                 result = null;
             }
@@ -74,7 +74,7 @@ namespace CSharpSQLiteCRUD.BaseDatos
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("@condicion", condicion);
 
-            cmd.Connection = Conexion.conn;
+            cmd.Connection = conn;
 
             return cmd;
         }
