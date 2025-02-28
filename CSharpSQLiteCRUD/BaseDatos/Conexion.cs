@@ -9,6 +9,8 @@ using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Data;
 
+using CSharpSQLiteCRUD.Modelo;
+
 namespace CSharpSQLiteCRUD.BaseDatos
 {
     public class Conexion
@@ -32,6 +34,33 @@ namespace CSharpSQLiteCRUD.BaseDatos
                 conn = null;
                 throw e;
             }
+        }
+
+        public static string ProcesoConsulta(string query, Articulo articulo, bool actualizar = false)
+        {
+            CrearConexion();
+
+            string response = "";
+            SQLiteCommand cmd;
+
+            try
+            {
+                cmd = DevolverConsultaPreparada(query, articulo, actualizar);
+
+                conn.Open();
+
+                response = (cmd.ExecuteNonQuery()) > 0 ? "Ok" : "Error";
+            }
+            catch (Exception e)
+            {
+                response = e.Message;
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open) conn.Close();
+            }
+
+            return response;
         }
 
         public static DataTable ProcesoConsulta(string query, string condicion = "")
@@ -73,6 +102,24 @@ namespace CSharpSQLiteCRUD.BaseDatos
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = query;
             cmd.Parameters.AddWithValue("@condicion", condicion);
+
+            cmd.Connection = conn;
+
+            return cmd;
+        }
+
+        private static SQLiteCommand DevolverConsultaPreparada(string query, Articulo articulo, bool actualizar)
+        {
+            SQLiteCommand cmd = new SQLiteCommand();
+
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            cmd.Parameters.AddWithValue("@descripcion", articulo.Descripcion);
+            cmd.Parameters.AddWithValue("@marca", articulo.Marca);
+            cmd.Parameters.AddWithValue("@medida_id", articulo.MedidaId);
+            cmd.Parameters.AddWithValue("@categoria_id", articulo.CategoriaId);
+
+            if(actualizar) cmd.Parameters.AddWithValue("@id", articulo.Id);
 
             cmd.Connection = conn;
 

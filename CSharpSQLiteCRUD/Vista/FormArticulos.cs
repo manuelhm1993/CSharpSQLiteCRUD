@@ -30,7 +30,13 @@ namespace CSharpSQLiteCRUD.Vista
             InitializeComponent();
         }
 
-        public DataGridView DevolverDataGridView() => this.dgvListadoArt;
+        public TextBox DevolverTxtArt() => this.txtArt;
+
+        public TextBox DevolverTxtMarca() => this.txtMarca;
+
+        public TextBox DevolverTxtMedida() => this.txtMedida;
+
+        public TextBox DevolverTxtCategoria() => this.txtCategoria;
 
         public void CargarDataGridView(DataTable dt) => this.dgvListadoArt.DataSource = dt;
 
@@ -97,6 +103,15 @@ namespace CSharpSQLiteCRUD.Vista
             this.dgvListadoArt.Columns["medida_id"].Visible = false;
             this.dgvListadoArt.Columns["categoria_id"].Visible = false;
         }
+
+        private void ReiniciarControles()
+        {
+            MostrarBotonesProceso(false);
+            MostrarBotonesPrincipales(true);
+            LimpiarTexto();
+
+            this.txtBuscar.Focus();
+        }
         #endregion
 
         #region "Eventos"
@@ -117,11 +132,29 @@ namespace CSharpSQLiteCRUD.Vista
             this.nombreBtnCRUD = ((Button)sender).Name;
 
             ActivarEscrituraTexto(false);
-            MostrarBotonesProceso(false);
-            MostrarBotonesPrincipales(true);
-            LimpiarTexto();
+            ReiniciarControles();
+        }
 
-            this.txtBuscar.Focus();
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string response = ControladorArticulo.Crear(this);
+
+            if (response.Equals("Ok"))
+            {
+                MessageBox.Show("Artículo guardado exitosamente", "Información", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ControladorArticulo.Listar(this, "%");
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar el artículo", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                ControladorArticulo.Listar(this, "%");
+            }
+
+            ReiniciarControles();
         }
 
         private void FormArticulos_Load(object sender, EventArgs e)

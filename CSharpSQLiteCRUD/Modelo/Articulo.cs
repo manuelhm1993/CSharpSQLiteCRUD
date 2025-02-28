@@ -13,6 +13,9 @@ namespace CSharpSQLiteCRUD.Modelo
 {
     public class Articulo
     {
+        private static int medidaId = 0;
+        private static int categoriaId = 0;
+
         #region "Propiedades"
         public int Id { get; set; }
         public string Descripcion { get; set; }
@@ -24,7 +27,7 @@ namespace CSharpSQLiteCRUD.Modelo
         #region "Metodos"
         public Articulo()
         {
-
+            
         }
 
         public DataTable Todos()
@@ -51,6 +54,29 @@ namespace CSharpSQLiteCRUD.Modelo
             DataTable dt = Conexion.ProcesoConsulta(query.ToString(), condicion);
 
             return dt;
+        }
+
+        public static string Insertar(Articulo articulo)
+        {
+            medidaId++;
+            categoriaId++;
+
+            articulo.MedidaId = medidaId;
+            articulo.CategoriaId = categoriaId;
+
+            StringBuilder query = new StringBuilder();
+
+            string descripcion = articulo.Descripcion;
+            string marca = articulo.Marca;
+            int medida_id = articulo.MedidaId;
+            int categoria_id = articulo.CategoriaId;
+
+            query.Append("insert into articulos ");
+            query.Append("(descripcion, marca, medida_id, categoria_id) ");
+            query.Append("values ");
+            query.Append("(@descripcion, @marca, @medida_id, @categoria_id ) ");
+
+            return Conexion.ProcesoConsulta(query.ToString(), articulo);
         }
         #endregion
     }

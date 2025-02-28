@@ -91,7 +91,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="bd_prueba.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -25,5 +25,20 @@ namespace CSharpSQLiteCRUD.Controlador
 
             vista.CargarDataGridView(articulo.Todos(condicion));
         }
+
+        public static string Crear(FormArticulos vista)
+        {
+            string response = String.Empty;
+            Articulo articulo = new Articulo();
+
+            articulo.Descripcion = vista.DevolverTxtArt().Text.Trim();
+            articulo.Marca = vista.DevolverTxtMarca().Text.Trim();
+            //articulo.MedidaId = Int32.Parse(vista.DevolverTxtMedida().Text.Trim());
+            //articulo.CategoriaId = Int32.Parse(vista.DevolverTxtCategoria().Text.Trim());
+
+            response = Articulo.Insertar(articulo);
+
+            return response;
+        }
     }
 }
